@@ -49,7 +49,7 @@ mandb
 ```
 man -k _selinux
 man -k _selinux |grep http
-
+```
 ```
 man httpd_selinux
 ```
@@ -69,18 +69,22 @@ semanage port -l |grep -w -E "(http_cache_port_t|http_port_t)"
 grep '^Listen' /etc/httpd/conf/httpd.conf
 sed -i 's/^Listen.*/Listen 82/g' /etc/httpd/conf/httpd.conf
 grep '^Listen' /etc/httpd/conf/httpd.conf
-
 ```
 * Reiniciar Apache
 
 ```
 systemctl restart httpd 
 ```
+
 DEBE FALLAR
 ```
 journalctl -u httpd
 ```
 
+Mensaje similar a:
+```
+ httpd[]: (13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:82
+```
 
 
 
