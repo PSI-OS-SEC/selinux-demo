@@ -83,7 +83,7 @@ journalctl -u httpd
 
 Mensaje similar a:
 ```
- httpd[]: (13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:82
+httpd[]: (13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:82
 ```
 
 
