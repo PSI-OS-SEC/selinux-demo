@@ -54,7 +54,7 @@ man -k _selinux |grep http
 man httpd_selinux
 ```
 
-Buscar en contenido del manual ```PORT TYPES   /PORT```
+Buscar en contenido del manual ```PORT TYPES```
 Salir del manual
 
 ```
