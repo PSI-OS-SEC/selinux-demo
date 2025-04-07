@@ -57,10 +57,14 @@ man httpd_selinux
 Buscar en contenido del manual ```PORT TYPES```
 Salir del manual
 
+## Identificar los puertos definidos para la política de httpd
 ```
 semanage port -l |grep -w -E "(http_cache_port_t|http_port_t)"
 ```
-
+Salida similar a:
+```
+http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
+```
 
 ## Validando funcionamiento de SELinux
 
@@ -112,6 +116,14 @@ systemctl restart httpd
 
 ```
 semanage port -a -t http_port_t -p tcp 82
+```
+Identificar de nuevo los puertos definidos para la política de httpd
+```
+semanage port -l |grep -w -E "(http_cache_port_t|http_port_t)"
+```
+Salida similar a:
+```
+http_port_t                    tcp      82, 80, 81, 443, 488, 8008, 8009, 8443, 9000
 ```
 
 * Reiniciar Apache
