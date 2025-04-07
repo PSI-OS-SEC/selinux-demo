@@ -100,6 +100,13 @@ Para ayudarnos a identificar la razón de la falla, podemos instalar el siguient
 ```
 dnf install setroubleshoot-server -y
 ```
+```
+systemctl restart setroubleshootd
+```
+```
+systemctl restart httpd 
+```
+
 
 ## Identificar la posible solución en base al log.
 
